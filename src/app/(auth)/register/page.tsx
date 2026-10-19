@@ -8,10 +8,7 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
-import {
-  RegisterSchema,
-  registerSchema,
-} from "@/lib/Schema/auth.schema";
+import { registerSchema } from "@/lib/Schema/auth.schema";
 import { signUpUser } from "@/services/auth.services";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Shield, Star, Van } from "lucide-react";
@@ -19,6 +16,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { z } from "zod";
 
 export default function Register() {
     const router = useRouter();
@@ -26,7 +24,7 @@ export default function Register() {
     control,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<RegisterSchema>({
+  } = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
     mode: "all",
     defaultValues: {
@@ -38,7 +36,7 @@ export default function Register() {
     },
   });
 
-  async function submitData(formData: RegisterSchema) {
+  async function submitData(formData: z.infer<typeof registerSchema>) {
     console.log(formData);
 
     try {
