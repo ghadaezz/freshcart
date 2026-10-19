@@ -34,9 +34,7 @@ import { cartContext } from "@/context/cartContext";
 const Navbar = () => {
  const { noOfWishlistItems } = useContext(WishlistContext) as { noOfWishlistItems: number };
   const session = useSession()
-  console.log("PATH:", window.location.pathname);
-console.log("SESSION:", session.status);
-console.log("USER:", session.data?.user);
+
  
   const cart = useContext(cartContext) as { noOfCartItems: number }
   const { noOfCartItems } = cart
@@ -56,7 +54,7 @@ console.log("USER:", session.data?.user);
            <div className="relative hidden md:block">
             <Search className="absolute inset-y-0 left-2.5 my-auto h-5 w-5" />
             <Input
-              className="w-[280px] flex-1 rounded-full border-none bg-muted pl-10 shadow-none"
+              className="w-280px flex-1 rounded-full border-none bg-muted pl-10 shadow-none"
               placeholder="search"
             />
           </div>

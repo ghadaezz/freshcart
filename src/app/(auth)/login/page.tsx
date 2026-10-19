@@ -57,7 +57,7 @@ return (
     {/* Left Side */}
     <div className="hidden lg:flex flex-col items-center justify-center px-10 py-12 text-center">
 
-      <div className="relative w-full max-w-xl h-[380px] overflow-hidden rounded-2xl shadow-lg">
+      <div className="relative w-full max-w-xl h-380px overflow-hidden rounded-2xl shadow-lg">
         <Image
           src="/freshcart.png"
           alt="FreshCart shopping"

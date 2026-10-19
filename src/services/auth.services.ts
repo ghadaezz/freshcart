@@ -1,8 +1,9 @@
-import { LoginSchemaType, RegisterSchema } from "@/lib/Schema/auth.schema";
+import { LoginSchemaType, registerSchema } from "@/lib/Schema/auth.schema";
+import { z } from "zod";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
-export async function signUpUser(formData: RegisterSchema) {
+export async function signUpUser(formData: z.infer<typeof registerSchema>) {
   const response = await fetch(
     `${BASE_URL}/api/v1/auth/signup`,
     {
