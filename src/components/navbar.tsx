@@ -54,7 +54,7 @@ const Navbar = () => {
            <div className="relative hidden md:block">
             <Search className="absolute inset-y-0 left-2.5 my-auto h-5 w-5" />
             <Input
-              className="w-280px flex-1 rounded-full border-none bg-muted pl-10 shadow-none"
+              className="w-[280px] flex-1 rounded-full border-none bg-muted pl-10 shadow-none"
               placeholder="search"
             />
           </div>
